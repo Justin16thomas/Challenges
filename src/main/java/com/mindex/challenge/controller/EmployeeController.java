@@ -1,6 +1,7 @@
 package com.mindex.challenge.controller;
 
 import com.mindex.challenge.data.Employee;
+import com.mindex.challenge.data.ReportingStructure;
 import com.mindex.challenge.service.EmployeeService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -39,5 +40,15 @@ public class EmployeeController {
 
         employee.setEmployeeId(id);
         return employeeService.update(employee);
+    }
+
+    /**
+     * REST endpoint that returns a ReportingStructure for a given employeeId.
+     * URL: GET /reportingStructure/{id}
+     */
+    @GetMapping("/reportingStructure/{id}")
+    public ReportingStructure getReportingStructure(@PathVariable String id) {
+        LOG.debug("Received request to get reporting structure for id [{}]", id);
+        return employeeService.getReportingStructure(id);
     }
 }
