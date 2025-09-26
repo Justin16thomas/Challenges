@@ -42,6 +42,7 @@ public class EmployeeController {
         return employeeService.update(employee);
     }
 
+
     /**
      * REST endpoint that returns a ReportingStructure for a given employeeId.
      * URL: GET /reportingStructure/{id}
@@ -51,4 +52,5 @@ public class EmployeeController {
         LOG.debug("Received request to get reporting structure for id [{}]", id);
         return employeeService.getReportingStructure(id);
     }
+
 }
